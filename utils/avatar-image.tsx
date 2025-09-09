@@ -1,8 +1,8 @@
-import { useState } from "react";
-import Image from "next/image";
-import type { ImageProps } from "next/image";
+import { useState } from 'react';
 
-interface AvatarImageProps extends Omit<ImageProps, "src" | "alt"> {
+import Image, { type ImageProps } from 'next/image';
+
+interface AvatarImageProps extends Omit<ImageProps, 'src' | 'alt'> {
   src: string;
   alt?: string;
   fallbackSrc?: string;
@@ -11,10 +11,10 @@ interface AvatarImageProps extends Omit<ImageProps, "src" | "alt"> {
 
 const AvatarImage = ({
   src,
-  alt = "Avatar",
+  alt = 'Avatar',
   width = 32,
   height = 32,
-  fallbackSrc = "/fallback-avatar.png",
+  fallbackSrc = '/fallback-avatar.png',
   className,
   style,
   ...rest
@@ -22,7 +22,18 @@ const AvatarImage = ({
   const [imgSrc, setImgSrc] = useState<string>(src);
 
   return (
-    <div><Image /></div>
+    <div>
+      <Image
+        src={imgSrc}
+        alt={alt}
+        width={width}
+        height={height}
+        className={className}
+        style={style}
+        onError={() => setImgSrc(fallbackSrc)}
+        {...rest}
+      />
+    </div>
   );
 };
 
