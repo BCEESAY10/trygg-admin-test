@@ -5,13 +5,8 @@ import Image from 'next/image';
 import { X, Eye, EyeOff } from 'lucide-react';
 
 import styles from '@/src/styles/modals/SubAdminModal.module.css';
-import type { SubAdminDetailsModalProps } from '@/types/interfaces/sub-admin';
 
-const SubAdminDetailsModal = ({
-  isOpen,
-  onClose,
-  admin,
-}: SubAdminDetailsModalProps) => {
+const SubAdminDetailsModal = ({ isOpen, onClose, admin }: any) => {
   const [showPassword, setShowPassword] = useState(false);
 
   if (!isOpen || !admin) return null;
