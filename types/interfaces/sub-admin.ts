@@ -2,6 +2,7 @@
  * SUB ADMIN INTERFACES
  =======================*/
 export interface SubAdmin {
+  phoneNumber: string;
   id: string;
   fullName: string;
   email: string;
@@ -27,6 +28,7 @@ export interface SubAdminResponse {
 }
 
 export interface SubAdminFormData {
+  id?: string;
   fullName: string;
   email: string;
   phone: string;

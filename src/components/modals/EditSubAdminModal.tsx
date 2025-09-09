@@ -20,7 +20,7 @@ const EditSubAdminModal = ({
   const [formData, setFormData] = useState<SubAdminFormData>({
     fullName: admin?.fullName ?? '',
     email: admin?.email ?? '',
-    phoneNumber: admin?.phoneNumber ?? '',
+    phone: admin?.phoneNumber ?? '',
     avatar: admin?.avatar ?? '/profiles/profile-1.avif',
   });
 
@@ -54,7 +54,7 @@ const EditSubAdminModal = ({
       return;
     }
 
-    onUpdate(admin.adminId, formData);
+    onUpdate(admin.id, formData);
     onClose();
   };
 
@@ -63,8 +63,8 @@ const EditSubAdminModal = ({
       setFormData({
         fullName: admin.fullName,
         email: admin.email,
-        phoneNumber: admin?.phoneNumber,
-        avatar: admin.avatar,
+        phone: admin?.phoneNumber,
+        avatar: admin.avatar ?? '/profiles/profile-1.avif',
       });
     }
     onClose();
@@ -130,8 +130,8 @@ const EditSubAdminModal = ({
             <label className={styles.field__label}>Phone</label>
             <input
               type="phone"
-              value={formData.phoneNumber}
-              onChange={e => handleInputChange('phoneNumber', e.target.value)}
+              value={formData.phone}
+              onChange={e => handleInputChange('phone', e.target.value)}
               placeholder="Enter Phone Number"
               className={styles.field__input}
               required
