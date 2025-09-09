@@ -1,6 +1,5 @@
 import type {
   OverallRating,
-  TopDriver,
   ReviewsPageData,
 } from '@/types/interfaces/reviews';
 
@@ -124,7 +123,7 @@ export const reviewsData: any[] = [
 /**==================
  * TOP DRIVERS DATA
  ==================*/
-export const topDriversData: TopDriver[] = [
+export const topDriversData: any[] = [
   {
     id: '1',
     driverId: 'DVR001',
